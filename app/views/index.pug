@@ -1,0 +1,20 @@
+extends layout.pug
+
+block content
+  div
+    table
+      tr
+        td Title
+        td Author
+        td Formats
+      each book in book_list
+        tr
+          td #{book.title}
+          td #{book.author}
+          td
+            if book.format.pdf
+              a(href= book.format.pdf) pdf
+            if book.format.epub
+              a(href= book.format.epub) epub
+            if book.format.mobi
+              a(href= book.format.mobi) mobi
