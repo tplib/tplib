@@ -10,12 +10,12 @@ block content
       tr
         td#title #{book.title}
         td#author #{book.author}
-        td.format#pdf
+        td
           if book.format.pdf
             a(href= book.format.pdf) PDF
-        td.format#epub
+        td
           if book.format.epub
             a(href= book.format.epub) EPUB
-        td.format#mobi
+        td
           if book.format.mobi
             a(href= book.format.mobi) MOBI
