@@ -1,0 +1,27 @@
+* {
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  color: #000;
+}
+
+table {
+  width: 100%;
+}
+
+td {
+  padding: 8px;
+}
+
+#title {
+  width: 50%;
+}
+
+#author {
+  width: 30%;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #C5C5C5;
+  color: #fff;
+}

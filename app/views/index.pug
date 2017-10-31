@@ -1,20 +1,21 @@
 extends layout.pug
 
+block scripts
+  link(rel='stylesheet', href='/index.css')
+
 block content
-  div
-    table
+  table
+    tr
+    each book in book_list
       tr
-        td Title
-        td Author
-        td Formats
-      each book in book_list
-        tr
-          td #{book.title}
-          td #{book.author}
-          td
-            if book.format.pdf
-              a(href= book.format.pdf) pdf
-            if book.format.epub
-              a(href= book.format.epub) epub
-            if book.format.mobi
-              a(href= book.format.mobi) mobi
+        td#title #{book.title}
+        td#author #{book.author}
+        td.format#pdf
+          if book.format.pdf
+            a(href= book.format.pdf) PDF
+        td.format#epub
+          if book.format.epub
+            a(href= book.format.epub) EPUB
+        td.format#mobi
+          if book.format.mobi
+            a(href= book.format.mobi) MOBI
