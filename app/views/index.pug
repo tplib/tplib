@@ -6,13 +6,13 @@ block scripts
 block content
   div#updateTime
     //- p Book List Updated On:
-    p Updated On #{update_time}
+    p Updated On #{last_updated}
+    p Total Books In Collection: #{book_count}
   //- div#lastUploaded
   //-   p The Last 3 Books To Be Added Were:
   //-     each book in last_uploaded
   //-       p #{book.title}
   table
-    tr
     each book in book_list
       tr
         td#title #{book.title}
