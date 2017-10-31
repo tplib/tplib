@@ -31,11 +31,11 @@ td {
   padding: 8px;
 }
 
-#title {
+.title {
   width: 50%;
 }
 
-#author {
+.author {
   width: 30%;
 }
 

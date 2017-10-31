@@ -7,7 +7,7 @@ block content
   div#updateTime
     //- p Book List Updated On:
     p Updated On #{last_updated}
-    p Total Books In Collection: #{book_count}
+    p Books In Collection: #{book_count}
   //- div#lastUploaded
   //-   p The Last 3 Books To Be Added Were:
   //-     each book in last_uploaded
@@ -15,8 +15,11 @@ block content
   table
     each book in book_list
       tr
-        td#title #{book.title}
-        td#author #{book.author}
+        if book.notes
+          td.title #{book.title} <br /> <hr /> #{book.notes}
+        else
+          td.title #{book.title}
+        td.author #{book.author}
         td
           if book.format.pdf
             a(href= book.format.pdf) PDF
