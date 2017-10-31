@@ -9,7 +9,6 @@ const index = require(__dirname + '/controllers/index');
 // database settings
 
 mongoose.connect(process.env.MLAB_URI, { useMongoClient: true });
-mongoose.Promise = global.Promise;
 
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'Connection error: '));

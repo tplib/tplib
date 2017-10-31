@@ -4,6 +4,13 @@ block scripts
   link(rel='stylesheet', href='/index.css')
 
 block content
+  div#updateTime
+    //- p Book List Updated On:
+    p Updated On #{update_time}
+  //- div#lastUploaded
+  //-   p The Last 3 Books To Be Added Were:
+  //-     each book in last_uploaded
+  //-       p #{book.title}
   table
     tr
     each book in book_list
