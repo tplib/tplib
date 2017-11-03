@@ -4,8 +4,8 @@ const mongoose = require('mongoose'),
 const bookSchema = new Schema({
   title: String,
   author: String,
-  format: {},
-  notes: {}
+  format: Array,
+  notes: String,
 },
 {
   timestamps: {}

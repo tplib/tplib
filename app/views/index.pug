@@ -13,7 +13,7 @@ block content
   //-     each book in last_uploaded
   //-       p #{book.title}
   table
-    each book in book_list
+    each book, i in book_list
       tr
         if book.notes
           td.title #{book.title} <br /> <hr /> #{book.notes}
@@ -21,11 +21,14 @@ block content
           td.title #{book.title}
         td.author #{book.author}
         td
-          if book.format.pdf
-            a(href= book.format.pdf) PDF
+          - for (var f = 0; f < book_list[i].format.length; f++)
+            if book_list[i].format[f].pdf
+              a(href= book.format[f].pdf) PDF (#{book.format[f].size})
         td
-          if book.format.epub
-            a(href= book.format.epub) EPUB
+          - for (var f = 0; f < book_list[i].format.length; f++)
+            if book_list[i].format[f].epub
+              a(href= book.format[f].epub) EPUB (#{book.format[f].size})
         td
-          if book.format.mobi
-            a(href= book.format.mobi) MOBI
+          - for (var f = 0; f < book_list[i].format.length; f++)
+            if book_list[i].format[f].mobi
+              a(href= book.format[f].mobi) MOBI (#{book.format[f].size})
